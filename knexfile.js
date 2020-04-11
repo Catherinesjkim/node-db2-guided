@@ -30,18 +30,18 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'my_db', // process.env.PROD_DB || "my_db",
+      user:     'username', // process.env.PROD_DB_USER || "username",
+      password: 'password',
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      tableName: 'knex_migrations',
+    },
+  },
 };
 
 // npm i -g knex
